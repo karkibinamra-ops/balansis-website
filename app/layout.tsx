@@ -1,4 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-export const metadata: Metadata = { title: "Balansis — Engineering the Edge", description: "Balansis turns complex challenges into purposeful technology through engineering, sensing and applied research.", metadataBase: new URL("https://balansis.pw") };
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body>{children}</body></html>; }
+import SmoothScroll from "@/components/SmoothScroll";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://balansis.pw"),
+  title: "Balansis — Engineering the Edge",
+  description: "Balansis is an independent technology company focused on engineering, sensing, resilient systems and applied research.",
+  openGraph: { title: "Balansis — Engineering the Edge", description: "Engineering the edge. Building for a more resilient world.", url: "https://balansis.pw", siteName: "Balansis", type: "website" }
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body><SmoothScroll />{children}</body></html>;
+}
